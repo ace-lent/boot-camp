@@ -1,0 +1,27 @@
+<h1>Enrollment Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Course</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enrollment_records.each do |enrollment_record| %>
+      <tr>
+        <td><%= enrollment_record.user.name %></td>
+        <td><%= enrollment_record.course.title %></td>
+        <td><%= link_to 'Show', enrollment_record %></td>
+        <td><%= link_to 'Edit', edit_enrollment_record_path(enrollment_record) %></td>
+        <td><%= link_to 'Destroy', enrollment_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Enrollment Record', new_enrollment_record_path %>

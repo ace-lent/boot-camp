@@ -1,0 +1,12 @@
+<p>
+  <strong>User:</strong>
+  <%= @enrollment_record.user.name %>
+</p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @enrollment_record.course.title %>
+</p>
+
+<%= link_to 'Edit', edit_enrollment_record_path(@enrollment_record) %> |
+<%= link_to 'Back', enrollment_records_path %>
